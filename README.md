@@ -54,6 +54,8 @@ pip install -r requirements.tx
     return isinstance(spec, (dict, typing.MutableMapping))
     ```
 
+5. Set NEPTUNE_API_TOKEN environment variable, see [Neptune authentication](https://docs.neptune.ai/getting-started/installation)
+
 # How To Use
 
 ## Train a model
