@@ -7,7 +7,7 @@ Researchers from other tasks and fields may find it useful as a reference to sta
 It utilizes [Pytorch Lightning](https://pytorch-lightning.readthedocs.io/en/stable/) for easy scaling (single GPU to large clusters), [Hydra](https://hydra.cc/docs/intro/) for managing configs and [Neptune](https://neptune.ai/) for logging and managing experiments.
 
 Implemented architectures:
-1. [Guidenet](https://github.com/kakaxi314)
+1. [Guidenet](https://github.com/kakaxi314/GuideNet)
 2. Supervised/Unsupervised [Sparse-to-Dense](https://github.com/fangchangma/self-supervised-depth-completion)
 3. [ACMNet](https://github.com/sshan-zhao/ACMNet)
 
@@ -33,7 +33,7 @@ pip install -r requirements.tx
     1. Set `data_root` datasets root path in [main config file](./src/configs/config.yaml)
     2. (Optional) Set `experiment_name`, `description` and `tags` fields for Neptune Logger
     3. Set `project_name` for Neptune Logger in [neptune logger config file](./src/configs/logger/neptune.yaml)
-    4. Set number of gpus on your [debug machine](configs/machine/debug.yaml) or [server](configs/machine/server.yaml)
+    4. Set number of gpus on your [debug machine](./src/configs/machine/debug.yaml) or [server](./src/configs/machine/server.yaml)
 
 4. Currently, Neptune Logger doesn't integrate with Hydra so a simple corerction is required:
     1. in `.venv/lib/neptune/internal/api_cleints/hosted_api_clients/hosted_alpha_leaderboard_api_client.py' line 129 replace:
@@ -54,7 +54,7 @@ pip install -r requirements.tx
     return isinstance(spec, (dict, typing.MutableMapping))
     ```
 
-5. Set NEPTUNE_API_TOKEN environment variable, see [Neptune authentication](https://docs.neptune.ai/getting-started/installation)
+5. Set NEPTUNE_API_TOKEN environment variable, see [Neptune installation](https://docs.neptune.ai/getting-started/installation)
 
 # How To Use
 
