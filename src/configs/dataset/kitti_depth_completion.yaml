@@ -1,0 +1,15 @@
+# @package _group_
+dataset_name: 'kitti_depth_completion'
+
+# Leave these as defaults, if needed, override per model
+use_rgb: true
+use_grayscale: false
+use_rgb_near: false
+use_intrinsics: false
+use_pose: false  # pose estimation
+use_pointcloud: false
+first_scale: 1
+n : [10000,5000,2500]
+k : [6,6,6]
+crop_type: 'bottom'  #'bottom' or 'center'
+horizontal_flip: true

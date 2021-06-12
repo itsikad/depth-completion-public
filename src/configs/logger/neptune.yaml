@@ -1,0 +1,4 @@
+# @package _group_
+api_key: null  # keep null, set an environment variable NEPTUNE_API_TOKEN with your API token
+offline_mode: false
+project_name: 'itsikad/depth-completion'

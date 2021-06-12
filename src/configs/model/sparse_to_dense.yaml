@@ -1,0 +1,28 @@
+# @package _global_
+model:
+  model_name: 'sparse_to_dense'
+  model_params:
+    depth_scale: 80
+
+loss:
+  loss_name: 'masked_mse'
+  loss_params:
+    params: null
+
+optimizer:
+  opt_name: 'Adam'  # Should be a torch.optim class name
+  opt_params:
+    lr: 0.00001
+    betas: [0.9, 0.999]
+    weight_decay: 0.0
+
+scheduler:
+  scheduler_name: 'StepLR'
+  scheduler_params:
+    step_size: 5
+    gamma: 0.5
+
+dataset:
+  use_grayscale: true
+  horizontal_flip: true
+  

@@ -1,0 +1,32 @@
+# @package _global_
+model:
+  model_name: 'acmnet'
+  model_params:
+    num_channels: 64
+    depth_scale: 80
+
+loss:
+  loss_name: 'acmnet_loss'
+  loss_params:
+    gamma: [0.5,0.5,0.01]
+
+optimizer:
+  opt_name: 'Adam'  # Should be a torch.optim class name
+  opt_params:
+    lr: 0.0005
+    betas: [0.9, 0.999]
+    weight_decay: 0
+
+scheduler:
+  scheduler_name: null  # 'MultiStepLR'
+  scheduler_params:
+    milestones: [10,20,30,40,50]
+    gamma: 0.1
+
+# Dataset overrides
+dataset:
+  use_rgb: true
+  use_intrinsics: true
+  use_pointcloud: true
+  crop_type: 'bottom'  #'bottom' or 'center'
+  horizontal_flip: false

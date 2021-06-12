@@ -1,0 +1,16 @@
+# @package _global_
+trainer: 
+  accelerator: 'ddp'
+  num_nodes: 1
+  gpus: [1]
+  max_epochs: 50
+  num_sanity_val_steps: 2
+  check_val_every_n_epoch: 5
+  sync_batchnorm: True
+  overfit_batches: 50
+  # track_grad_norm: 2
+  
+dataloader:
+  batch_size: 1
+  num_workers: 1
+  pin_memory: true

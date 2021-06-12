@@ -1,0 +1,16 @@
+# Directories
+.DS_Store
+.vscode/
+.venv/
+__pycache__/
+tmp/
+temp/
+venv/
+logs/
+checkpoints/
+test_env/
+outputs/
+
+# Files
+**/*.ckpt
+

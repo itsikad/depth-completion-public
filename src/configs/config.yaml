@@ -1,0 +1,25 @@
+defaults:
+  - logger: neptune
+  - machine: server
+  - dataset: kitti_depth_completion
+  - model: guidenet
+
+dataset:
+  data_root: '~/projects/depth_completion/datasets/'  # datasets sotrage path
+  dataset_root: "${dataset.data_root}/${dataset.dataset_name}"  # the speccific dataset path
+
+# Overrides
+logger:
+  experiment_name: 'Experiment-Name'
+  description: 'Describe experiment here'
+  tags: ['Depth-Completion']
+
+trainer:
+  resume_from_checkpoint: null  # None to start from scratch or '<path_to_ckpt_file>' to continue
+  accumulate_grad_batches: 1  # effective batch size will be batch_size * num_gpus * acc_batches
+
+# Logging
+log_train_images_interval: 200
+log_val_images_interval: 50
+
+seed_id: 42
