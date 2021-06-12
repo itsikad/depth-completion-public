@@ -29,10 +29,10 @@ source .venv/bin/activate
 pip install -r requirements.tx
 ```
 
-3. Edit [configs](./configs/):
-    1. Set `data_root` datasets root path in [main config file](./configs/config.yaml)
+3. Edit [configs](./src/configs/):
+    1. Set `data_root` datasets root path in [main config file](./src/configs/config.yaml)
     2. (Optional) Set `experiment_name`, `description` and `tags` fields for Neptune Logger
-    3. Set `project_name` for Neptune Logger in [neptune logger config file](./configs/logger/neptune.yaml)
+    3. Set `project_name` for Neptune Logger in [neptune logger config file](./src/configs/logger/neptune.yaml)
     4. Set number of gpus on your [debug machine](configs/machine/debug.yaml) or [server](configs/machine/server.yaml)
 
 4. Currently, Neptune Logger doesn't integrate with Hydra so a simple corerction is required:
@@ -65,7 +65,7 @@ Training an existing architecture is as simple as (example uses `guidenet`):
 python src/run.py model=guidenet machine=server
 ```
 
-where `guidenet` can be replaced with any other model located in `./configs/model/<model_name>.yaml`, for example `self_sup_sparse_to_dense`)
+where `guidenet` can be replaced with any other model located in `./src/configs/model/<model_name>.yaml`, for example `self_sup_sparse_to_dense`)
 
 CAUTION: During the first run, KITTI Depth Completion dataset will be downloaded and processed. It might take several hours and roughly ~160gb of disk space.
 
